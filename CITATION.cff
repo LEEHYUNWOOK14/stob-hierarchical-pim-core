@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "STOB Hierarchical HBM2-PIM Core"
+message: "If you use this research package, cite the accompanying report."
+type: software
+authors:
+  - name: "STOB Hierarchical PIM project contributors"
+date-released: 2026-08-27
+version: "submission-2026-08-27"
+repository-code: "https://github.com/LEEHYUNWOOK14/stob-hierarchical-pim-core"

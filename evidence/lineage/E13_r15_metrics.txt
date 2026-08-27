@@ -1,0 +1,21 @@
+R15_INDEPENDENT_METRICS
+classification=H15_SUPPORTED_FRACTIONAL_CLEANUP_STRICT_ZERO_PASS
+before_precise_overflow=0.334782609
+after_precise_overflow=0.000000000
+before_overflowed_edges=8
+after_overflowed_edges=0
+selected_nets=85
+cleanup_passes=1
+threshold=1.000000000
+integer_overflow=0
+routed_nets=3799490
+unresolved_resources=0
+total_congestion=0.00
+wire_overflow=0.00
+via_overflow=0.00
+max_edge_overflow=0.00
+report_records=0
+grt_0115=0
+grt_0118=0
+reopen=PASS
+gate_parser_note=wrapper gate reported unparsable_route_metrics because its Total-row parser expects nine fields; independent log evidence is complete and exact

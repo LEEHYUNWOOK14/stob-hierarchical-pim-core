@@ -1,0 +1,444 @@
+{
+  "generated_at": "2026-08-25 12:13:44 UTC",
+  "log_count": 786,
+  "bytes_scanned": 630145143,
+  "time_markers": 597,
+  "incidents": [
+    {
+      "name": "WBQ repair_design gap A",
+      "start": "2026-08-14 00:50:36 UTC",
+      "end": "2026-08-14 03:41:57 UTC",
+      "seconds": 10281,
+      "marker": "2,983,000 → 2,984,000",
+      "delta": "+13 resized, +12 buffers, +13 repaired",
+      "cause": "High-terminal net의 Steiner 후보 edge 탐색으로 추정. 당시 함수 프로파일은 없어 inference.",
+      "resolution": "개입 없이 계산 완료 후 1,000-driver marker 출력."
+    },
+    {
+      "name": "WBQ repair_design gap B",
+      "start": "2026-08-14 03:41:57 UTC",
+      "end": "2026-08-14 06:34:20 UTC",
+      "seconds": 10343,
+      "marker": "2,984,000 → 2,985,000",
+      "delta": "+13 resized, +12 buffers, +13 repaired",
+      "cause": "perf 2회에서 CPU 99.3~100%가 pdr::get_nearest_neighbors()에 집중. 중첩 순회 O(N²).",
+      "resolution": "개입 없이 nearest-neighbor 계산 완료 후 marker 출력."
+    },
+    {
+      "name": "WBQ buffer explosion",
+      "start": "marker 2,980,000",
+      "end": "marker 2,981,000",
+      "seconds": 0,
+      "marker": "2,980,000 → 2,981,000",
+      "delta": "+15 resized, +1,485 buffers, +16 repaired",
+      "cause": "소수의 초대형 fanout/high-terminal net에 region repeater가 대량 삽입된 정황.",
+      "resolution": "buffer 삽입 완료. 이후 STA graph와 Steiner 입력 크기를 키워 후속 비용을 증폭했을 가능성."
+    }
+  ],
+  "r16_snapshot": {
+    "present": true,
+    "route_runtime_seconds": 67991.51,
+    "route_elapsed": 62135,
+    "route_exit_status": 0,
+    "peak_rss_gib": 79.49,
+    "drvs": 0,
+    "dbwire_bearing_nets": 3799490,
+    "large_net_warning_count": 1001,
+    "reopen_status": "REOPEN_DESIGN_FAILED",
+    "reopen_exit_status": 1,
+    "reopen_elapsed": "2026-08-25T12:10:18Z → 2026-08-25T12:11:22Z",
+    "reopen_error": "{clk}",
+    "route_elapsed_wall": "18:59:04"
+  },
+  "top_elapsed": [
+    {
+      "seconds": 2951.24,
+      "cpu": 140,
+      "memory_mb": 17802.4765625,
+      "command": "unattributed stage",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b25/b25_rebuild_work/logs/sky130hd/normalization_hbm_quad_local_b25/base/3_4_place_resized.log",
+      "line": 4153,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 2754.69,
+      "cpu": 99,
+      "memory_mb": 13373.47265625,
+      "command": "3_1_place_gp_skip_io",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b33/physical/b33_place.log",
+      "line": 597,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 2704.74,
+      "cpu": 99,
+      "memory_mb": 13358.87109375,
+      "command": "3_1_place_gp_skip_io",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b35_r2/physical/b35_r2_place.log",
+      "line": 589,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 2694.57,
+      "cpu": 144,
+      "memory_mb": 17759.30078125,
+      "command": "3_4_place_resized",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b28/physical/b28_place.log",
+      "line": 5552,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 2659.3,
+      "cpu": 144,
+      "memory_mb": 17853.984375,
+      "command": "3_4_place_resized",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b31/physical/b31_place.log",
+      "line": 5553,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 2651.14,
+      "cpu": 99,
+      "memory_mb": 13359.296875,
+      "command": "3_1_place_gp_skip_io",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b35_r1/physical/b35_r1_place.log",
+      "line": 589,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 2645.95,
+      "cpu": 145,
+      "memory_mb": 17778.4140625,
+      "command": "3_4_place_resized",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b25/physical/b25_place.log",
+      "line": 5569,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 2642.9,
+      "cpu": 99,
+      "memory_mb": 13358.93359375,
+      "command": "3_1_place_gp_skip_io",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b35/physical/b35_place.log",
+      "line": 597,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 2590.02,
+      "cpu": 99,
+      "memory_mb": 17507.22265625,
+      "command": "3_4_place_resized",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b35_r2/physical/b35_r2_place.log",
+      "line": 5386,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 2488.22,
+      "cpu": 99,
+      "memory_mb": 17506.90625,
+      "command": "3_4_place_resized",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b35_r1/physical/b35_r1_place.log",
+      "line": 5387,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 2249.3,
+      "cpu": 319,
+      "memory_mb": 13049.76171875,
+      "command": "unattributed stage",
+      "path": "external/OpenROAD-flow-scripts/flow/logs/sky130hd/normalization_hbm_wbq/base/3_3_place_gp.log",
+      "line": 182,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 2011.33,
+      "cpu": 100,
+      "memory_mb": 28954.80078125,
+      "command": "unattributed stage",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b26_l2d_a6_floorplan_native_corridor_1gcell_r1_20260822T084006Z/physical/global_route.log",
+      "line": 54,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 1942.97,
+      "cpu": 503,
+      "memory_mb": 13735.19140625,
+      "command": "unattributed stage",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b25/b25_rebuild_work/logs/sky130hd/normalization_hbm_quad_local_b25/base/3_3_place_gp.log",
+      "line": 649,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 1757.24,
+      "cpu": 488,
+      "memory_mb": 13888.78125,
+      "command": "3_3_place_gp",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b31/physical/b31_place.log",
+      "line": 1426,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 1663.12,
+      "cpu": 501,
+      "memory_mb": 13740.7890625,
+      "command": "3_3_place_gp",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b25/physical/b25_place.log",
+      "line": 1417,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 1640.72,
+      "cpu": 500,
+      "memory_mb": 13697.97265625,
+      "command": "3_3_place_gp",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b28/physical/b28_place.log",
+      "line": 1425,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 1512.38,
+      "cpu": 100,
+      "memory_mb": 28908.72265625,
+      "command": "unattributed stage",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b26_l1_iter2_r1_20260820T150613Z/physical/b26_l1_global_route.log",
+      "line": 54,
+      "kind": "Elapsed"
+    },
+    {
+      "seconds": 1468.15,
+      "cpu": 514,
+      "memory_mb": 13248.21875,
+      "command": "unattributed stage",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b25/b25_rebuild_work/logs/sky130hd/normalization_hbm_quad_local_b25/base/3_1_place_gp_skip_io.log",
+      "line": 622,
+      "kind": "Elapsed"
+    }
+  ],
+  "top_took": [
+    {
+      "seconds": 33146,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "repair_design -verbose -match_cell_footprint",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/physical_feasibility/logic_die_normalization_hbm_top_wbq_repair_guarded_reset_exclusion.log",
+      "line": 4097,
+      "kind": "Took"
+    },
+    {
+      "seconds": 33146,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "repair_design -verbose -match_cell_footprint",
+      "path": "external/OpenROAD-flow-scripts/flow/logs/sky130hd/normalization_hbm_wbq/base/3_4_place_resized.log",
+      "line": 4090,
+      "kind": "Took"
+    },
+    {
+      "seconds": 10033,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "detailed_placement",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b25/physical/b25_place.log",
+      "line": 5622,
+      "kind": "Took"
+    },
+    {
+      "seconds": 6437,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "repair_timing -verbose",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b26_l2d_a8_cts_r3_fence_ownership_r1_20260823T001622Z/cts/cts.log",
+      "line": 9365,
+      "kind": "Took"
+    },
+    {
+      "seconds": 6432,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "repair_timing -verbose",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b26_l2d_a8_cts_strict_completion_r1_20260823T154741Z/cts/cts_strict.log",
+      "line": 9365,
+      "kind": "Took"
+    },
+    {
+      "seconds": 3525,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -density 0.39 -pad_left 0 -pad_right 0 -force_center_initial_place -min_phi_coef 0.95 -max_phi_coef 1.05",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b33/physical/b33_place.log",
+      "line": 1234,
+      "kind": "Took"
+    },
+    {
+      "seconds": 3443,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -density 0.39 -pad_left 0 -pad_right 0 -force_center_initial_place -min_phi_coef 0.95 -max_phi_coef 1.05",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b35_r2/physical/b35_r2_place.log",
+      "line": 1220,
+      "kind": "Took"
+    },
+    {
+      "seconds": 3414,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -density 0.39 -pad_left 0 -pad_right 0 -force_center_initial_place -min_phi_coef 0.95 -max_phi_coef 1.05",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b35_r1/physical/b35_r1_place.log",
+      "line": 1220,
+      "kind": "Took"
+    },
+    {
+      "seconds": 2723,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -skip_io -density 0.39 -pad_left 0 -pad_right 0",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b33/physical/b33_place.log",
+      "line": 593,
+      "kind": "Took"
+    },
+    {
+      "seconds": 2693,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "repair_design -verbose -match_cell_footprint",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b25/b25_rebuild_work/logs/sky130hd/normalization_hbm_quad_local_b25/base/3_4_place_resized.log",
+      "line": 4147,
+      "kind": "Took"
+    },
+    {
+      "seconds": 2673,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -skip_io -density 0.39 -pad_left 0 -pad_right 0",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b35_r2/physical/b35_r2_place.log",
+      "line": 585,
+      "kind": "Took"
+    },
+    {
+      "seconds": 2619,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -skip_io -density 0.39 -pad_left 0 -pad_right 0",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b35_r1/physical/b35_r1_place.log",
+      "line": 585,
+      "kind": "Took"
+    },
+    {
+      "seconds": 2607,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -skip_io -density 0.39 -pad_left 0 -pad_right 0",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b35/physical/b35_place.log",
+      "line": 592,
+      "kind": "Took"
+    },
+    {
+      "seconds": 2453,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "repair_design -verbose -match_cell_footprint",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b28/physical/b28_place.log",
+      "line": 5546,
+      "kind": "Took"
+    },
+    {
+      "seconds": 2414,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "repair_design -verbose -match_cell_footprint",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b31/physical/b31_place.log",
+      "line": 5547,
+      "kind": "Took"
+    },
+    {
+      "seconds": 2403,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "repair_design -verbose -match_cell_footprint",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b25/physical/b25_place.log",
+      "line": 5563,
+      "kind": "Took"
+    },
+    {
+      "seconds": 2369,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "repair_design -verbose -match_cell_footprint",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b35_r2/physical/b35_r2_place.log",
+      "line": 5380,
+      "kind": "Took"
+    },
+    {
+      "seconds": 2281,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "repair_design -verbose -match_cell_footprint",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b35_r1/physical/b35_r1_place.log",
+      "line": 5380,
+      "kind": "Took"
+    },
+    {
+      "seconds": 1703,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -density 0.39 -pad_left 0 -pad_right 0 -force_center_initial_place -min_phi_coef 0.95 -max_phi_coef 1.05",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b25/b25_rebuild_work/logs/sky130hd/normalization_hbm_quad_local_b25/base/3_3_place_gp.log",
+      "line": 612,
+      "kind": "Took"
+    },
+    {
+      "seconds": 1524,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -density 0.39 -pad_left 0 -pad_right 0 -force_center_initial_place -min_phi_coef 0.95 -max_phi_coef 1.05",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b31/physical/b31_place.log",
+      "line": 1389,
+      "kind": "Took"
+    },
+    {
+      "seconds": 1433,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -density 0.39 -pad_left 0 -pad_right 0 -force_center_initial_place -min_phi_coef 0.95 -max_phi_coef 1.05",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b25/physical/b25_place.log",
+      "line": 1380,
+      "kind": "Took"
+    },
+    {
+      "seconds": 1424,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -skip_io -density 0.39 -pad_left 0 -pad_right 0",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b25/b25_rebuild_work/logs/sky130hd/normalization_hbm_quad_local_b25/base/3_1_place_gp_skip_io.log",
+      "line": 618,
+      "kind": "Took"
+    },
+    {
+      "seconds": 1413,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -density 0.39 -pad_left 0 -pad_right 0 -force_center_initial_place -min_phi_coef 0.95 -max_phi_coef 1.05",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b28/physical/b28_place.log",
+      "line": 1388,
+      "kind": "Took"
+    },
+    {
+      "seconds": 1302,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -density 0.36 -pad_left 0 -pad_right 0 -force_center_initial_place -min_phi_coef 0.95 -max_phi_coef 1.05",
+      "path": "external/OpenROAD-flow-scripts/flow/logs/sky130hd/normalization_hbm_wbq/base/3_3_place_gp.log",
+      "line": 177,
+      "kind": "Took"
+    },
+    {
+      "seconds": 1170,
+      "cpu": null,
+      "memory_mb": null,
+      "command": "global_placement -skip_io -density 0.39 -pad_left 0 -pad_right 0",
+      "path": "server_snapshot/PIM_simulator/reports/groot_normalization/quad_local_b31/physical/b31_place.log",
+      "line": 745,
+      "kind": "Took"
+    }
+  ]
+}

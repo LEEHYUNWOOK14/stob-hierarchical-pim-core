@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "completed_utc": "2026-08-21T07:53:00Z",
+  "objective": "Execute the bounded Track B B26-L2D autonomous candidate ladder.",
+  "final_status": "STOP_STRUCTURAL_HYPOTHESIS_REQUIRED",
+  "best_local_seed": "B26-L2D-CENTRAL-ONE-CELL-MOVE-R1",
+  "reference": {"residual": 3, "overflow_edges": 3, "overflow_tracks": 3},
+  "stages": [
+    {
+      "stage": "A1",
+      "namespace": "quad_local_b26_l2d_cugr_global_met1_adj_r1_20260821T062729Z",
+      "change": "global met1 adjustment 0.05",
+      "classification": "IMPROVED_NOT_CLOSED",
+      "runtime_seconds": 1162.87,
+      "peak_rss_kb": 29560852,
+      "result": {"residual": 1, "overflow_edges": 2, "overflow_tracks": 2, "layers": {"met2": 2}},
+      "hotspot_change": "All three parent met1 overflows removed; two new met2 overflows appeared at centers (2273.55,2080.35) and (4260.75,4640.25).",
+      "reopen": "PASS"
+    },
+    {
+      "stage": "A2",
+      "namespace": "track_b_cugr_region_patch_20260821T070523Z",
+      "classification": "REGIONAL_CAPACITY_SUPPORT_CONFIRMED",
+      "patch_diff_sha256": "77614878fd2891a29c0023a9896b35c6cd762494b70e167ef8379eec300d9591",
+      "build_install": "PASS",
+      "smoke": "One met1 edge changed capacity 15.00 to 7.50 for adjustment 0.50.",
+      "regressions": "4/4 PASS"
+    },
+    {
+      "stage": "A3",
+      "namespace": "quad_local_b26_l2d_cugr_region_adj_central_r1_20260821T070739Z",
+      "change": "regional met1 adjustment 0.05 on C1/C2/C3",
+      "classification": "REGRESSED",
+      "runtime_seconds": 1417.41,
+      "peak_rss_kb": 29669284,
+      "result": {"residual": 8, "overflow_edges": 4, "overflow_tracks": 4, "layers": {"met1": 4}},
+      "overflow_centers_um": [[2901.45,9007.95],[4640.25,4343.55],[4654.05,4550.55],[4695.45,4343.55]],
+      "reopen": "PASS"
+    },
+    {
+      "stage": "A4",
+      "namespace": "quad_local_b26_l2d_corridor_widen_1gcell_preaudit_20260821T073907Z",
+      "classification": "PREAUDIT_PASS",
+      "change": "one 6.9um GCell inward on each central-facing fence edge",
+      "result": "All fence, central-margin, ownership, hotspot, and parent-hash gates passed."
+    },
+    {
+      "stage": "A5",
+      "namespace": "quad_local_b26_l2d_corridor_widen_1gcell_r1_20260821T074358Z",
+      "classification": "STOP_INVALID_RUN",
+      "placement_invocations": 1,
+      "placement_runtime_seconds": 182.64,
+      "placement_peak_rss_kb": 13447888,
+      "region_placement_violations": 3615582,
+      "output_artifact": "NONE",
+      "global_route": "NOT_AUTHORIZED_NOT_RUN"
+    }
+  ],
+  "limits": {
+    "candidate_global_routes_run": 2,
+    "candidate_global_routes_max": 3,
+    "corridor_fence_placement_candidates_run": 1,
+    "corridor_fence_placement_candidates_max": 1,
+    "strength_sweeps_run": 0,
+    "simultaneous_large_process_max_observed": 1
+  },
+  "preservation": {
+    "canonical_b26": "UNCHANGED",
+    "l2d": "UNCHANGED",
+    "netlist_sdc_protocol_reset_die_core": "UNCHANGED",
+    "cts_sta_detailed_route_gds": "NOT_RUN"
+  },
+  "pf4": "BLOCKED",
+  "next_approval_scope": "A new bounded structural hypothesis and, if desired, authorization to diagnose DPL region handling or generate fence geometry through a different validated floorplan path with a new placement budget."
+}

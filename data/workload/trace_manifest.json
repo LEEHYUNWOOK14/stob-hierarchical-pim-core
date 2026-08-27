@@ -1,0 +1,115 @@
+{
+  "classification": "PRETRAINED_ACTION_HEAD_SYNTHETIC_BOUNDARY_INPUT",
+  "not_full_groot_inference": true,
+  "model": "nvidia/GR00T-N1.7-3B",
+  "model_revision": "2fc962b973bccdd5d8ce4f67cc63b264d6886495",
+  "seed": 1701,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4060",
+  "dtype": "bfloat16",
+  "sequence_length": 280,
+  "image_tokens": 256,
+  "action_horizon": 40,
+  "denoise_steps": 4,
+  "profile_counts": {
+    "action_vlln": 1,
+    "action_vl_self_attention_norm1": 4,
+    "action_vl_self_attention_norm3": 4,
+    "action_dit_adaln_norm1": 128,
+    "action_dit_norm3": 128,
+    "action_dit_norm_out": 4
+  },
+  "total_normalization_invocations": 269,
+  "samples": {
+    "action_vlln": {
+      "sample_file": "action_vlln.pt",
+      "input_hex": "action_vlln_input_bf16.hex",
+      "output_hex": "action_vlln_output_bf16.hex",
+      "gamma_hex": "action_vlln_gamma_bf16.hex",
+      "beta_hex": "action_vlln_beta_bf16.hex",
+      "shape": [
+        1,
+        280,
+        2048
+      ],
+      "input_sha256": "fed1a9111ab1b995d05838cc5d2d2767d87b8cf6d6e46a51ec025ab0ec93ac88",
+      "output_sha256": "d14a46c68a37984b690fe05b2732c45636014d61f83fc302912492d56866effc"
+    },
+    "action_vl_self_attention_norm1": {
+      "sample_file": "action_vl_self_attention_norm1.pt",
+      "input_hex": "action_vl_self_attention_norm1_input_bf16.hex",
+      "output_hex": "action_vl_self_attention_norm1_output_bf16.hex",
+      "gamma_hex": "action_vl_self_attention_norm1_gamma_bf16.hex",
+      "beta_hex": "action_vl_self_attention_norm1_beta_bf16.hex",
+      "shape": [
+        1,
+        280,
+        2048
+      ],
+      "input_sha256": "d14a46c68a37984b690fe05b2732c45636014d61f83fc302912492d56866effc",
+      "output_sha256": "a47cbfe760048e21b9586caccea2fada7f945733fc00d8542fdd2a61bba39ca5"
+    },
+    "action_vl_self_attention_norm3": {
+      "sample_file": "action_vl_self_attention_norm3.pt",
+      "input_hex": "action_vl_self_attention_norm3_input_bf16.hex",
+      "output_hex": "action_vl_self_attention_norm3_output_bf16.hex",
+      "gamma_hex": "action_vl_self_attention_norm3_gamma_bf16.hex",
+      "beta_hex": "action_vl_self_attention_norm3_beta_bf16.hex",
+      "shape": [
+        1,
+        280,
+        2048
+      ],
+      "input_sha256": "648a77ebef0a1bc6b7aa71b6724e7427e082bc818b5fe65f6de842049ee8f9a2",
+      "output_sha256": "f5145c0df5b530605758a6b8285fd23ec9be014d5142fb2c6c8575b7beeb3afd"
+    },
+    "action_dit_adaln_norm1": {
+      "sample_file": "action_dit_adaln_norm1.pt",
+      "input_hex": "action_dit_adaln_norm1_input_bf16.hex",
+      "output_hex": "action_dit_adaln_norm1_output_bf16.hex",
+      "gamma_hex": "action_dit_adaln_norm1_gamma_bf16.hex",
+      "beta_hex": "action_dit_adaln_norm1_beta_bf16.hex",
+      "shape": [
+        1,
+        41,
+        1536
+      ],
+      "input_sha256": "a15b94232d5eb6a3bbcd2c135ffaa2914a8824f08bc023f80add56204ea728a6",
+      "output_sha256": "bc5b10a5a8ac81585274d21809c9496540d8f7a84cc87a674e50393d477e75c2"
+    },
+    "action_dit_norm3": {
+      "sample_file": "action_dit_norm3.pt",
+      "input_hex": "action_dit_norm3_input_bf16.hex",
+      "output_hex": "action_dit_norm3_output_bf16.hex",
+      "gamma_hex": "action_dit_norm3_gamma_bf16.hex",
+      "beta_hex": "action_dit_norm3_beta_bf16.hex",
+      "shape": [
+        1,
+        41,
+        1536
+      ],
+      "input_sha256": "d4776086c5371681f1079b01ce903ce77f87b6a3c3b88f79d97291a0ed8ed251",
+      "output_sha256": "d7e3e4f81aa782f3d960beeb8607598e96930dedde4fb0db54e3151b006e98e6"
+    },
+    "action_dit_norm_out": {
+      "sample_file": "action_dit_norm_out.pt",
+      "input_hex": "action_dit_norm_out_input_bf16.hex",
+      "output_hex": "action_dit_norm_out_output_bf16.hex",
+      "gamma_hex": "action_dit_norm_out_gamma_bf16.hex",
+      "beta_hex": "action_dit_norm_out_beta_bf16.hex",
+      "shape": [
+        1,
+        41,
+        1536
+      ],
+      "input_sha256": "0a605eebf397a3fd177515ffea3bd7faae29b6ffc307659ed2089df39b21ec03",
+      "output_sha256": "1be4ce50f8d53f9ec76857cfbd868149c9fb27ef446a8a15e16dd6eebab41f55"
+    }
+  },
+  "action_pred_shape": [
+    1,
+    40,
+    132
+  ],
+  "action_pred_sha256": "1a2d9ff2f8c7b905f6c525f5026d2baaa5169476f7a67aa411608c3d14e161ac"
+}

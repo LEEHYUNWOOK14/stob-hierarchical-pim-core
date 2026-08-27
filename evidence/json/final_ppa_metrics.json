@@ -1,0 +1,63 @@
+{
+  "report_name": "최종 PPA",
+  "generated_utc": "2026-08-25",
+  "classification": "POST_ROUTE_EXTRACTED_EXPLORATORY_PPA_COMPLETE_WITH_LIMITATIONS",
+  "claim_boundary": "research exploratory PPA; not timing-closed, workload-power-validated, or manufacturing signoff",
+  "design": {
+    "name": "logic_die_normalization_hbm_quad_local_b2_top",
+    "platform": "sky130hd",
+    "instances": 4914323,
+    "clock": {"name": "clk", "source": "clk_i", "period_ns": 40.0, "frequency_mhz": 25.0},
+    "standard_cell_area_um2": 31855576,
+    "utilization_percent": 39.0,
+    "implied_placeable_area_mm2": 81.680964
+  },
+  "routing": {
+    "r15_global_route": {"routed_nets": 3799490, "skipped_nets": 0, "total_congestion": 0.0, "strict_zero": true},
+    "r16_detailed_route": {"final_drvs": 0, "design_is_routed": true, "unplaced": 0, "wire_length_um": 147956981, "vias": 28032721, "dbwire_bearing_nets": 3799490, "wire_segments": 130247794}
+  },
+  "rcx": {
+    "spef_bytes": 7071219382,
+    "spef_sha256": "05f087ada748b994bb34eaac8d3ab438e98e5447682ab330a2d8063626c3745b",
+    "extracted_nets": 3799491,
+    "rc_segments": 37974421,
+    "rsegs": 41773760,
+    "caps": 41773760,
+    "coupling_caps": 40630055,
+    "unannotated_drivers": 412694,
+    "partially_unannotated_drivers": 0
+  },
+  "timing": {
+    "setup_wns_ns": -318.8779464070906,
+    "setup_tns_ns": -21913132.31871173,
+    "hold_wns_ns": -5.3795156518691325,
+    "hold_tns_ns": -4164.842839155657,
+    "setup_clock_skew_ns": 0.831886,
+    "hold_clock_skew_ns": -0.906474,
+    "normal_clock_setup_path_slack_ns": -318.8780,
+    "async_recovery_slack_ns": -289.4002,
+    "normal_clock_hold_path_slack_ns": -5.3795,
+    "async_removal_slack_ns": -2.7514,
+    "critical_observed_capacitance_pf": 40.9556,
+    "critical_observed_slew_ns": 287.4541,
+    "timing_closed": false,
+    "valid_fmax_derivation": false
+  },
+  "power": {
+    "method": "VECTORLESS_ESTIMATE",
+    "total_w_as_reported": 1.830695,
+    "sum_of_group_total_w": 1.8329661,
+    "group_sum_minus_total_w": 0.0022711,
+    "internal_w": 0.8990895,
+    "switching_w": 0.9315920,
+    "leakage_w": 0.00001322383,
+    "workload_representative": false,
+    "unit_caveat": "power.rpt labels Watts while report_units lists power 1nW; group totals exceed the Total row by 0.0022711 W"
+  },
+  "provenance": {
+    "critical_large_artifact_hashes": "PASS",
+    "repository_verifier_classification": "PROVENANCE_MISMATCH",
+    "reasons": ["execution_manifest.json missing", "historical R7 evidence pins older mutable active-plan hashes"],
+    "physical_data_mismatch_observed": false
+  }
+}

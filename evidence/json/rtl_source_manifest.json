@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "snapshot_name": "logic_die_normalization_pcu_8lane_split_rw",
+  "snapshot_date": "2026-08-13",
+  "freeze_decision_date": "2026-08-12",
+  "status": "PASS_RTL_FROZEN",
+  "top_module": "logic_die_normalization_pcu_top",
+  "scope": "Synthesizable Logic-die Normalization PCU RTL source closure",
+  "source_of_truth_at_snapshot": "rtl/",
+  "freeze_evidence": "reports/groot_normalization/rtl_freeze/01_final_rtl_freeze_report.md",
+  "configuration": {
+    "banks": 16,
+    "bank_policy": "split_rw",
+    "read_arbitration": "round_robin",
+    "lanes": 8,
+    "scalar_engines": 4,
+    "contexts": 8,
+    "local_reduction_contexts": 2,
+    "apply_fifo_depth": 16,
+    "traffic_counter_width": 32
+  },
+  "files": [
+    {"source": "rtl/bf16_to_fp32.sv", "snapshot": "rtl/bf16_to_fp32.sv", "bytes": 194, "sha256": "ac957f00dc2448f88345ece4ea5b3f8b331893d21e5b4a98d220e53865b3912d"},
+    {"source": "rtl/fp32_to_bf16_rne.sv", "snapshot": "rtl/fp32_to_bf16_rne.sv", "bytes": 729, "sha256": "f013eb8829e2469a1b2f1f76064076f9c39a612a69b0b7b1d447b60d9228778c"},
+    {"source": "rtl/fp32_add.sv", "snapshot": "rtl/fp32_add.sv", "bytes": 4059, "sha256": "f7aa9a3eee4ec7823af39cbf4cce3b08f6144d77ff78ad8954134c4aea009e07"},
+    {"source": "rtl/fp32_mul.sv", "snapshot": "rtl/fp32_mul.sv", "bytes": 3388, "sha256": "c5f8e7825f5f675cecd13b7a814cd689f1708ce62cc074b8fbe99625e19875a0"},
+    {"source": "rtl/fp32_add_pipe4.sv", "snapshot": "rtl/fp32_add_pipe4.sv", "bytes": 4784, "sha256": "a3693a88c3ea9fa9e8b4a5e450186e8d28954137f70518536aa4b5f40d282856"},
+    {"source": "rtl/fp32_mul_pipe4.sv", "snapshot": "rtl/fp32_mul_pipe4.sv", "bytes": 4375, "sha256": "a0dad981484ca37d653a889d5e02b43ee05b3498827de23e3c07107b79c6e90a"},
+    {"source": "rtl/bf16_rsqrt_lut256.sv", "snapshot": "rtl/bf16_rsqrt_lut256.sv", "bytes": 2791, "sha256": "78b11847767b3f15698ce3c4cad29b31418f16a081edc31d244330481c5870b8"},
+    {"source": "rtl/bf16_rsqrt_lut256_case.svh", "snapshot": "rtl/bf16_rsqrt_lut256_case.svh", "bytes": 8560, "sha256": "c6febf4b4afda8dda07edf01b133b16dddf70c44ca0d8d2a04e9657ddcbcc41f"},
+    {"source": "rtl/mixed_precision_bank_reducer_pingpong.sv", "snapshot": "rtl/mixed_precision_bank_reducer_pingpong.sv", "bytes": 9096, "sha256": "6f134cf1dc3b5f4738c19d0a29ca062fc7dcf844af155e6309424bedfb2e2ef0"},
+    {"source": "rtl/mixed_precision_global_reducer16_pipe.sv", "snapshot": "rtl/mixed_precision_global_reducer16_pipe.sv", "bytes": 2617, "sha256": "5354e3232b3d9537df339ad138a6aab4917dcc2dc30ce53a9ef4da54b967ff74"},
+    {"source": "rtl/mixed_precision_scalar_nr2_pipe.sv", "snapshot": "rtl/mixed_precision_scalar_nr2_pipe.sv", "bytes": 6098, "sha256": "ecf04c99a86bcd2b967208b0bad80b64edc95ab5c5e803f2891052744830c232"},
+    {"source": "rtl/mixed_precision_scalar_engine_array.sv", "snapshot": "rtl/mixed_precision_scalar_engine_array.sv", "bytes": 2945, "sha256": "4daeac52645fae7eed7ad56485db92ee12dbcd973f8350c53699de3705ca7cde"},
+    {"source": "rtl/mixed_precision_bank_apply_pipe.sv", "snapshot": "rtl/mixed_precision_bank_apply_pipe.sv", "bytes": 5080, "sha256": "e70cb3fa88c949e5171a18ddeae725b4ed0ad39a55aacfe923e954602eccec30"},
+    {"source": "rtl/mixed_precision_row_context_table.sv", "snapshot": "rtl/mixed_precision_row_context_table.sv", "bytes": 2053, "sha256": "60c45116088476bea0ea8587bbcf63f92bbf975edacbd38f0b75912515cf5d9f"},
+    {"source": "rtl/mixed_precision_multirow_datapath.sv", "snapshot": "rtl/mixed_precision_multirow_datapath.sv", "bytes": 6060, "sha256": "d9626ab9ec68135d3ec59c4b7dd6384f95c6b1688fd0800cfe94c9f35f4b65b5"},
+    {"source": "rtl/normalization_bank_scheduler.sv", "snapshot": "rtl/normalization_bank_scheduler.sv", "bytes": 9303, "sha256": "93969764ff09559c4f4cf16ceb5c22c3e1a78dd7a9582244a978da3659baf6da"},
+    {"source": "rtl/logic_die_normalization_pcu_top.sv", "snapshot": "rtl/logic_die_normalization_pcu_top.sv", "bytes": 15555, "sha256": "6db39e5307d3af700b5d1580dd07a7b98f8bbfafb4ff9b3a8492eb1ad0fea7a6"}
+  ],
+  "exclusions": [
+    "testbenches and vectors",
+    "candidate RTL not needed by the frozen top",
+    "HBM boundary adapter added after the PCU freeze",
+    "synthesis, STA, placement, routing and GDS derivatives"
+  ],
+  "claim_boundary": "RTL functional and structural freeze only; no physical implementation, timing closure, power, manufacturing, or silicon claim."
+}
