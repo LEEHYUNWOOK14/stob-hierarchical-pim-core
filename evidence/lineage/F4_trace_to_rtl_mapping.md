@@ -1,4 +1,4 @@
-# Phase 3 GR00T Trace-to-RTL Mapping Report
+# 3단계 GR00T trace-to-RTL 매핑 보고서
 
 작성일: 2026-08-11
 
@@ -8,7 +8,7 @@
 
 Source trace의 증거 등급은 Phase 2와 동일하게 `PRETRAINED_ACTION_HEAD_SYNTHETIC_BOUNDARY_INPUT`이다.
 
-## Mapping 규칙
+## 매핑 규칙
 
 hidden dimension의 column을 다음과 같이 mapping했다.
 

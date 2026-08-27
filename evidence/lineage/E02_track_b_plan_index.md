@@ -1,10 +1,10 @@
-# Track B plan index
+# Track B 계획 색인
 
-Updated: 2026-08-24 UTC
+갱신일: 2026-08-24 UTC
 
 이 문서는 Track B 계획 문서의 우선순위와 변경 가능 여부를 정의한다. 과거 실행 prompt와 candidate plan은 SHA-256 provenance에 포함되므로 내용을 수정하지 않고 역사 문서로 보존한다.
 
-## Current authority
+## 현재 기준 문서
 
 1. `TRACK_B_B26_L2D_A8_ACTIVE_DOWNSTREAM_PLAN.md`
 2. `TRACK_B_B26_L2D_A8_ACTIVE_DOWNSTREAM_PLAN.json`
@@ -12,10 +12,10 @@ Updated: 2026-08-24 UTC
 4. Immutable work-plan reference: `reports/groot_normalization/quad_local_b26_l2d_a8_cts_r3_fence_ownership_r1_20260823T001622Z/research_ppa_work_plan.json`
 5. Current bounded execution: `TRACK_B_B26_L2D_A8_R11_H11_DRT_RCX_PPA_PROMPT.md` and its R11 `candidate_plan.json`
 
-Current completion direction:
+현재 완료 방향:
 
 ```text
-DRT basic integrity
+DRT 기본 무결성
 → independent reopen
 → routed RC extraction
 → post-route STA/PPA
@@ -23,9 +23,9 @@ DRT basic integrity
 → independent readback
 ```
 
-Manufacturing signoff is not part of the current completion direction.
+제조 signoff는 현재 완료 방향에 포함되지 않습니다.
 
-## Immutable historical execution documents
+## 변경하지 않는 과거 실행 문서
 
 다음 문서는 실행 당시의 hash와 계약을 보존하기 위해 수정하지 않는다. 현재 계획과 충돌하면 current authority를 적용하며, 역사 문서를 재실행하지 않는다.
 
@@ -49,7 +49,7 @@ Manufacturing signoff is not part of the current completion direction.
 - `TRACK_B_B26_L2D_NEXT_ECO_PROMPT_LEGACY.md`
 - `TRACK_B_B35_RESUME_PROMPT.md`
 
-## Updated high-level documents
+## 갱신된 상위 수준 문서
 
 다음 상위 문서는 current authority를 가리키도록 갱신했다.
 
@@ -60,7 +60,7 @@ Manufacturing signoff is not part of the current completion direction.
 - `final_integrated_research_gds_goal_prompt.md`
 - `NEXT_WORK_PROMPT_WBQ_PHASE3_5_PHASE4.md`
 
-## Preservation rule
+## 보존 규칙
 
 - 이미 manifest나 prompt hash에 인용된 파일은 in-place 수정하지 않는다.
 - 새 방향은 versioned plan/index로 추가한다.

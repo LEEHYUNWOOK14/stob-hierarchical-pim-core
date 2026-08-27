@@ -60,7 +60,7 @@ Power는 보고서 표기 기준 총 **1.830695W**지만 `VECTORLESS_ESTIMATE`�
 
 ## 3. 물리 구현 결과
 
-### 3.1 Global routing 계보
+### 3.1 global routing 계보
 
 R6에서 R10, R15로 진행하면서 global-route congestion은 2.55 → 0.79 → 0.00으로 감소했다. R15는 precise overflow, 3D overflow, 2D aggregate overflow, spreadable overflow가 모두 0인 strict-zero 입력을 R16에 제공했다.
 
@@ -74,7 +74,7 @@ R6에서 R10, R15로 진행하면서 global-route congestion은 2.55 → 0.79 �
 
 이 표는 GRT 단계 안에서의 계보 비교다. R6/R10은 post-route extracted PPA가 아니므로 R16의 area/timing/power 우열 비교 기준으로 사용할 수 없다.
 
-### 3.2 Detailed routing 수렴
+### 3.2 detailed routing 수렴
 
 DRT는 0번째 optimization iteration에서 2,282,092 violation을 기록한 뒤 17번째 iteration의 반복 repair에서 0에 도달했다. 4번째 iteration까지 99.38%, 10번째까지 99.998%, 최종적으로 100% 감소했다.
 
@@ -175,7 +175,7 @@ Unannotated driver 412,694개는 open/short/DRC 412,694건을 의미하지 않�
 
 이 결과는 1.78ns 제약 결과가 아니다. R16 `5_2_route.sdc`와 R8 STA runner가 요구한 실제 period는 40ns다. `check_setup_pass=1`은 constraint coverage 검사 성공이지 timing closure PASS가 아니다.
 
-### 5.2 Slack 결과
+### 5.2 slack 결과
 
 | Check | WNS | TNS | 판정 |
 |---|---:|---:|---|
@@ -203,7 +203,7 @@ Unannotated driver 412,694개는 open/short/DRC 412,694건을 의미하지 않�
 
 지연의 대부분은 긴 논리 깊이보다 `clone380183` 주변의 대부하·대slew에서 발생한다. 이 net은 buffer/split tree가 존재함에도 한 지점에서 40.956pF를 구동한다. R15/R8 로그에서도 `GRT-0281` large-fanout warning이 101개 발생했고 최대 fanout은 6,794 terminal이다. 따라서 1순위 병목은 payload/control 계열의 fanout과 물리 분배 구조다.
 
-### 5.4 Reset recovery/removal
+### 5.4 reset recovery/removal
 
 비동기 reset도 별도로 실패한다.
 
@@ -214,11 +214,11 @@ Unannotated driver 412,694개는 open/short/DRC 412,694건을 의미하지 않�
 
 RTL의 `normalization_quad_reset_leaf`는 비동기 assert, 2-flop synchronous release 구조다. 외부 `rst_ni`에는 false path가 있지만 내부 `sync_release_q → RESET_B`는 Liberty recovery/removal 검사를 받는다. 이 위반은 실제 reset integrity 문제일 수 있으므로 단순 false-path로 숨기면 안 된다. 다만 일반 `clk` setup 경로가 −318.878ns로 더 나쁘기 때문에 현재 전체 timing 실패가 reset-only 현상은 아니다.
 
-### 5.5 Hold 경로
+### 5.5 hold 경로
 
 일반 hold 최악 경로는 `job_row_i[2]` 입력에서 adapter flop으로 가며 slack은 −5.3795ns다. 입력 external delay는 2ns인데 endpoint propagated clock insertion은 약 7.53ns이므로 post-CTS I/O latency 모델과 hold fixing이 충분하지 않다. 이는 내부 데이터 경로 hold와 구분해 I/O constraint/board model을 먼저 검증해야 한다.
 
-## 6. Power 상세 분석
+## 6. power 상세 분석
 
 Power report의 그룹별 구성은 다음과 같다.
 
@@ -303,7 +303,7 @@ DRT가 관측 chain wall time의 약 92.2%를 사용한 명확한 병목이다. 
 2. 40ns가 실제 연구 목표인지 확정한다. 1.78ns와 혼재된 과거 표기를 제거하고 모든 비교 후보에 동일 SDC를 적용한다.
 3. 412,694 unannotated driver를 zero/local net, clock load, reset, 일반 hierarchical net으로 실제 SPEF name mapping 대조한다.
 
-### P1 — Timing 병목 개선
+### P1 — timing 병목 개선
 
 1. `clone380183` 계열과 payload-store 입력망의 fanout을 분할하고 register/buffer replication을 적용한다.
 2. quad-local payload/control 신호가 물리 영역을 가로지르지 않도록 source와 sink를 지역화한다.

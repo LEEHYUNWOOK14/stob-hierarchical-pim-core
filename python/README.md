@@ -1,10 +1,10 @@
-# Selected Python utilities
+# 선별 Python 유틸리티
 
-Only workload, accuracy, analysis, and provenance helpers are included here.
-Thermal, HotSpot/3D-ICE, hardware-cost thermal, and simulator-launch scripts
-are intentionally excluded.
+이곳에는 workload, 정확도, 분석 및 provenance 보조 도구만 포함됩니다.
+열 분석, HotSpot/3D-ICE, hardware-cost 열 분석 및 시뮬레이터 실행
+스크립트는 의도적으로 제외했습니다.
 
-These files are source snapshots selected for review. Some scripts refer to
-the original experiment layout and may require path adaptation before local
-execution; this repository does not claim one-command reproduction of the
-excluded simulator or thermal pipeline.
+이 파일들은 검토를 위해 선별한 소스 snapshot입니다. 일부 스크립트는 원래
+실험 배치를 참조하므로 로컬 실행 전에 경로를 조정해야 할 수 있습니다.
+이 저장소는 제외된 시뮬레이터 또는 열 분석 파이프라인의 한 번에 실행되는
+재현을 주장하지 않습니다.

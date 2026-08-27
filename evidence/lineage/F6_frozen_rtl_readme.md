@@ -132,7 +132,7 @@ logic_die_normalization_pcu_top
 
 ## 6. top-level interface 그룹
 
-### 6.1 clock, reset, counter control
+### 6.1 clock, reset, counter 제어
 
 | 신호 | 방향 | 설명 |
 |---|---|---|
@@ -142,11 +142,11 @@ logic_die_normalization_pcu_top
 
 Reset은 context valid, pointer, pipeline valid, counter와 오류 상태를 초기화한다. 정상 동작 중인 transaction 도중 reset을 넣고 다시 작업할 수 있는지 회귀로 검증했다.
 
-### 6.2 invocation interface
+### 6.2 invocation 인터페이스
 
 `invocation_valid_i/invocation_ready_o`는 외부에서 들어오는 큰 호출 단위의 control traffic을 계수하기 위한 경계다. 현재 wrapper는 항상 ready를 반환하며, handshake마다 `COMMAND_BYTES`를 외부 control byte counter에 더한다. 여러 row job은 하나의 invocation 아래에서 logic-die-local scheduler가 생성할 수 있다.
 
-### 6.3 row job interface
+### 6.3 row job 인터페이스
 
 | 신호 | 설명 |
 |---|---|
@@ -160,13 +160,13 @@ Reset은 context valid, pointer, pipeline valid, counter와 오류 상태를 초
 
 현재 구현은 sparse bank mask를 받는 모양을 유지하지만 실제 global reducer는 16개 partial을 모두 요구한다. 따라서 `job_bank_mask_i`는 현재 반드시 all-one이어야 하며, 그렇지 않으면 job을 받지 않고 protocol error를 기록한다.
 
-### 6.4 reduction pass interface
+### 6.4 reduction pass 인터페이스
 
 각 bank는 `reduction_valid_i[b]`와 `reduction_data_i[b]`를 제공한다. 각 data beat에는 `LANES`개의 BF16 activation이 있다. scheduler는 16개 bank가 모두 valid이고 downstream bank reducer 16개가 모두 ready인 경우에만 16개 bank 전체를 같은 cycle에 accept한다.
 
 부분 bank만 valid인 상태에서 일부 데이터만 먼저 소비하지 않는다. 이것이 lockstep 규칙이다. 이 규칙은 bank skew가 있을 때 row 정렬이 깨지는 것을 방지한다.
 
-### 6.5 replay request interface
+### 6.5 replay request 인터페이스
 
 scalar 결과가 준비되면 top wrapper는 해당 tag의 저장된 context를 찾아 다음 정보를 `replay_request_*`로 보낸다.
 
@@ -176,7 +176,7 @@ scalar 결과가 준비되면 top wrapper는 해당 tag의 저장된 context를 
 
 `replay_request_valid_o`는 controller가 `replay_request_ready_i`를 올릴 때까지 유지된다. 따라서 backpressure 중에도 replay 명령이 사라지지 않는다. 동시에 하나의 replay request만 pending register에 유지되므로, 기존 request가 남은 상태에서 다른 scalar completion이 오면 protocol error다.
 
-### 6.6 replay data interface
+### 6.6 replay data 인터페이스
 
 두 번째 pass에서는 bank별로 다음 값이 들어온다.
 
@@ -188,7 +188,7 @@ scalar 결과가 준비되면 top wrapper는 해당 tag의 저장된 context를 
 
 reduction read와 replay read는 같은 read service slot을 공유한다. 둘 다 동시에 완전한 16-bank transaction으로 준비된 경우 round-robin bit가 선택권을 번갈아 준다.
 
-### 6.7 write-back interface
+### 6.7 write-back 인터페이스
 
 `writeback_*`는 apply pipeline의 최종 BF16 결과를 bank로 돌려보내는 bank별 ready/valid interface다. split R/W 기본 mode에서는 write-back이 read slot을 차지하지 않으므로 reduction 또는 replay read와 같은 cycle에 진행할 수 있다.
 
@@ -341,7 +341,7 @@ reduction과 replay가 동시에 eligible이면 `read_rr_q`에 따라 하나를 
 
 이 구조는 BF16 I/O와 FP32 accumulation/scalar/apply의 mixed-precision 정책이다. 실제 vendor floating-point IP나 IEEE exception flag interface를 사용하지 않는다.
 
-## 11. traffic accounting
+## 11. traffic 집계
 
 Top wrapper는 구조 비교를 위해 다음 byte 수를 내부 32-bit counter로 누적하고 외부에는 64-bit zero-extension으로 제공한다.
 

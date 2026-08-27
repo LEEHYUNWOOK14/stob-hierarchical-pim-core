@@ -1,14 +1,14 @@
-# Source map
+# 소스 맵
 
-| Package area | Origin and role | Submission status |
+| 패키지 영역 | 출처 및 역할 | 제출 상태 |
 |---|---|---|
-| `rtl/core/normalization_pcu/` | Project normalization PCU frozen RTL | Included |
-| `rtl/integration/` | Project quad-local integration RTL | Included |
-| `verification/` | Selected RTL and integration benches | Included selectively |
-| `cpp/reference/` | Independent FP16 vector utility | Included; not simulator code |
-| `python/` | Selected workload/analysis/provenance utilities | Included selectively |
-| `data/`, `evidence/` | Selected derived evidence | Included selectively |
-| `excluded-simulator-source/` | Samsung PIMSimulator + DRAMSim2-derived C++ | Excluded |
-| `sim`, `libdramsim`, `obj_dir` | Build/runtime artifacts | Excluded |
-| `thermal/`, `hardware_cost/thermal/` | Thermal analysis pipeline | Excluded |
-| external papers/checkpoints | Third-party source material | Not copied |
+| `rtl/core/normalization_pcu/` | 프로젝트 정규화 PCU 동결 RTL | 포함 |
+| `rtl/integration/` | 프로젝트 quad-local 통합 RTL | 포함 |
+| `verification/` | 선별 RTL 및 통합 테스트벤치 | 선별 포함 |
+| `cpp/reference/` | 독립 FP16 vector 유틸리티 | 포함, 시뮬레이터 코드 아님 |
+| `python/` | 선별 workload/분석/provenance 유틸리티 | 선별 포함 |
+| `data/`, `evidence/` | 선별 파생 증거 | 선별 포함 |
+| `excluded-simulator-source/` | 삼성 PIMSimulator 및 DRAMSim2 파생 C++ | 제외 |
+| `sim`, `libdramsim`, `obj_dir` | 빌드/실행 산출물 | 제외 |
+| `thermal/`, `hardware_cost/thermal/` | 열 분석 파이프라인 | 제외 |
+| 외부 논문/checkpoint | 제3자 원자료 | 복사하지 않음 |

@@ -1,6 +1,6 @@
-# Verification package
+# 검증 패키지
 
-The selected testbenches are retained as evidence sources. A PASS is limited
-to the exact test, input, RTL revision, and evidence recorded with it.
-Historical failures are not deleted from the research record; they are not
-used as current PASS evidence unless a dated repair result supersedes them.
+선별된 테스트벤치는 증거자료로 보존했습니다. PASS는 해당 기록에 포함된
+정확한 테스트, 입력, RTL revision 및 증거로 제한됩니다. 과거 실패는 연구
+기록에서 삭제하지 않으며, 날짜가 있는 수정 결과가 대체하지 않는 한 현재
+PASS 증거로 사용하지 않습니다.

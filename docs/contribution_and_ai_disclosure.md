@@ -1,8 +1,8 @@
-# Contribution and AI disclosure
+# 기여 및 AI 사용 공개
 
-The human project author is responsible for the research question, architecture
-selection, interpretation of results, claim boundaries, and final submission.
+연구 질문, 아키텍처 선정, 결과 해석, 주장 범위 및 최종 제출에 대한 책임은
+인간 프로젝트 작성자에게 있습니다.
 
-AI-assisted tools may have been used for code drafting, log parsing, experiment
-bookkeeping, and document formatting. Final source selection, validation,
-limitations, attribution, and claims must be reviewed by the human author.
+AI 보조 도구는 코드 초안 작성, 로그 분석, 실험 기록 관리 및 문서 서식
+정리에 사용되었을 수 있습니다. 최종 소스 선정, 검증, 한계, attribution
+및 주장은 인간 작성자가 검토해야 합니다.

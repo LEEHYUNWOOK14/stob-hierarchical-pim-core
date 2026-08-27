@@ -1,43 +1,44 @@
-# B25 Track B placement failure diagnosis
+# B25 Track B 배치 실패 진단
 
-Updated: 2026-08-19 UTC
+갱신일: 2026-08-19 UTC
 
-## Verdict
+## 판정
 
-B25 passes the cheap functional and mapped-locality gates but fails before global route at detailed placement. The failure is a legalization/capacity failure, not a proven RTL protocol or arithmetic failure.
+B25는 저비용 기능 및 mapped-locality gate는 통과했지만 global route 이전의 detailed placement에서 실패했습니다. 이 실패는 legalization/capacity 실패이며, RTL protocol 또는 arithmetic 실패로 입증된 것은 아닙니다.
 
-Evidence:
+근거:
 
-- `cheap_gate_manifest.json`: overall result `PASS`.
-- `b25_placement_authorization.json`: placement authorization `PASS`.
-- `physical/b25_placement_execution_report.json`: placement `FAIL`, exit code `2`.
-- `physical/b25_place.log`: `DPL-0033`, 48,736 remaining illegal cells, 17,972 overlap checks and 17,972 padding checks.
-- The placement flow raised target density from `0.39` to `0.43` because the available fenced free area was insufficient for the requested target.
+- `cheap_gate_manifest.json`: 전체 결과 `PASS`.
+- `b25_placement_authorization.json`: 배치 승인 `PASS`.
+- `physical/b25_placement_execution_report.json`: 배치 `FAIL`, 종료 코드 `2`.
+- `physical/b25_place.log`: `DPL-0033`, 불법 셀 48,736개 잔여, overlap 검사 17,972회 및 padding 검사 17,972회.
+- 요청한 목표를 수용할 fenced free area가 부족해 배치 흐름이 목표 밀도를 `0.39`에서 `0.43`으로 올렸습니다.
 
-## Root-cause classification
+## 원인 분류
 
-The B25 completion-descriptor ECO reduced the central completion interface from 68 to 17 bits, but the physical failure remains dominated by the interaction of:
+B25 completion-descriptor ECO로 중앙 completion interface는 68비트에서 17비트로 줄었지만, 물리 실패는 여전히 다음 요소의 상호작용이 지배합니다.
 
 1. four exclusive quad fences;
 2. central corridor and clock/reset/control routing demand;
 3. resized buffer/inverter cells around payload, apply, and control paths;
 4. insufficient legal row space for the detailed legalizer to resolve overlaps and padding.
 
-The failure must not be attributed to residual routing congestion alone: B25 never produced a legal placement or a route input.
+이 실패를 잔여 배선 혼잡만의 원인으로 해석해서는 안 됩니다. B25는 합법적인
+배치 또는 배선 입력을 생성하지 못했습니다.
 
-## Next experiment: B26 placement-policy isolation
+## 다음 실험: B26 배치 정책 격리
 
-Before changing the B25 RTL again, run one isolated B26 experiment using the sealed B25 mapped netlist and the same floorplan/fence contract. Change only the placement recovery policy:
+B25 RTL을 다시 변경하기 전에 봉인된 B25 mapped netlist와 동일한 floorplan/fence 계약으로 B26 격리 실험을 한 번 수행합니다. 배치 복구 정책만 변경합니다.
 
-- preserve B25 RTL, mapped netlist, floorplan, SDC, and fence geometry;
-- use an explicit incremental detailed-placement recovery pass from the last valid B25 pre-detail checkpoint;
-- test the established DRC-penalty policy values (`20`, then `100`) in separate output namespaces;
-- keep `set_placement_padding -global -left 0 -right 0`;
-- require independent legality/fence reopen audit;
-- do not route unless placement violations and overlap/padding checks are zero.
+- B25 RTL, mapped netlist, floorplan, SDC 및 fence geometry를 보존합니다.
+- 마지막 유효 B25 pre-detail checkpoint에서 명시적 incremental detailed-placement recovery pass를 사용합니다.
+- 확립된 DRC-penalty 정책값 (`20`, 이후 `100`)을 별도 output namespace에서 시험합니다.
+- `set_placement_padding -global -left 0 -right 0`을 유지합니다.
+- 독립 legality/fence reopen 감사를 요구합니다.
+- 배치 위반 및 overlap/padding 검사가 0이 아니면 배선하지 않습니다.
 
-This isolates whether B25's failure is recoverable by legalization policy. If both policy probes fail with the same fence-localized violations, the next ECO must change physical density/capacity or the placement-visible buffer/control structure. No B25 artifact may be overwritten.
+이 실험은 B25 실패가 legalization 정책으로 복구 가능한지 분리합니다. 두 정책 시험이 동일한 fence 국소 위반으로 실패하면 다음 ECO는 물리 밀도/용량 또는 배치에 보이는 buffer/control 구조를 바꿔야 합니다. B25 산출물은 덮어쓰지 않습니다.
 
-## Promotion rule
+## 승격 규칙
 
-Only a B26 candidate with legal placement may proceed to the single-shot global route. Only a candidate with `rrr_residual=0` and `overflow_edges=0` may proceed to CTS. Any nonzero result remains Track B exploratory evidence and is not final PPA/signoff evidence.
+합법적인 배치를 가진 B26 후보만 단일 global route로 진행할 수 있습니다. `rrr_residual=0` 및 `overflow_edges=0`인 후보만 CTS로 진행할 수 있습니다. 0이 아닌 결과는 Track B 탐색 증거로 남기며 최종 PPA/signoff 증거로 사용하지 않습니다.

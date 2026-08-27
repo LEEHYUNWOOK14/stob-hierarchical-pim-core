@@ -1,4 +1,4 @@
-# Phase 1 Actual GR00T Normalization Workload Report
+# 1단계 실제 GR00T 정규화 workload 보고서
 
 작성일: 2026-08-11
 
@@ -46,7 +46,7 @@ Phase 2 진입 조건인 실제 GR00T normalization invocation 식별은 충족�
 
 따라서 기존 `[8960,64]` profile은 현재 pinned N1.7 checkpoint와 일치하지 않는다. 새 manifest에서는 Q와 K를 분리했으며 token 수 280은 runtime 측정이 아닌 legacy representative로 표시했다.
 
-## Invocation 식
+## 호출 수 식
 
 batch 1, action horizon 40, denoising step 4 기준으로 확정 가능한 action-head 호출은 다음과 같다.
 

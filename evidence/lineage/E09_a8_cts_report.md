@@ -1,11 +1,12 @@
-# Strict CTS completion rerun
+# 엄격한 CTS 완료 재실행
 
-Final classification: **H1_SUPPORTED_CTS_STRICT_PASS**. Governing prompt SHA256: `016bb087a4c918c24d74baa6d295215d7f5558f03e8170b3092f87cd5f4f366c`.
+최종 분류: **H1_SUPPORTED_CTS_STRICT_PASS**. 기준 prompt SHA256:
+`016bb087a4c918c24d74baa6d295215d7f5558f03e8170b3092f87cd5f4f366c`.
 
-All source, recipe, baseline, canonical-tool, resource, ownership, DPL, completion, output, and independent reopen gates passed. The canonical CTS executable was `external/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad`, SHA256 `ed2d72763fd57a7500f18a03ddb714c3a31730c12ef3bcaf4e19cf688ef327f9`, version `26Q3-1080-gab6fd26351`. The route-free seed hashes were `61ce871b8b3d9a4db1204557f733788d475affabaf67921021e17b5676dcd879` (ODB) and `51ff83730acbf6710614999f79a9dd7d7b8aff7824f4d36a4b05b3c88f33a5fd` (SDC). CTS ran exactly once, exited 0, and took 02:07:04 wall time with peak RSS 31,669,600 kB.
+source, recipe, baseline, canonical-tool, resource, ownership, DPL, completion, output 및 independent reopen gate가 모두 통과했습니다. canonical CTS 실행 파일은 `external/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad`이며 SHA256은 `ed2d72763fd57a7500f18a03ddb714c3a31730c12ef3bcaf4e19cf688ef327f9`, 버전은 `26Q3-1080-gab6fd26351`입니다. route-free seed hash는 ODB `61ce871b8b3d9a4db1204557f733788d475affabaf67921021e17b5676dcd879`, SDC `51ff83730acbf6710614999f79a9dd7d7b8aff7824f4d36a4b05b3c88f33a5fd`입니다. CTS는 정확히 한 번 실행했고 종료 코드 0, wall time 02:07:04, peak RSS 31,669,600 kB였습니다.
 
-The in-process marker `R3_STRICT_CTS_TCL_COMPLETE PASS` and external marker `R3_STRICT_CTS_COMPLETION PASS` are present. Final `check_placement -verbose` reported zero violations, unplaced instances were 0, ownership hooks had zero ambiguous assignments and zero existing group/region changes, and second detailed placement converged to 0 violations / 0 illegal cells / 0 illegal sites at iteration 4. Output hashes: `4_1_cts.odb` `2aa6698071258bba5e6853b04245f546189457729ac59118b1d43bbb798502d5`; `4_cts.sdc` `c3f1381d0f8c236bd826f1fb0ab2a3b069a29242fdc89a2b9d2f29d4795950e8`.
+프로세스 내부 marker `R3_STRICT_CTS_TCL_COMPLETE PASS`와 외부 marker `R3_STRICT_CTS_COMPLETION PASS`가 있습니다. 최종 `check_placement -verbose`는 위반 0건, 미배치 instance 0개를 보고했습니다. ownership hook에는 모호한 할당과 기존 group/region 변경이 없었고, 두 번째 detailed placement는 4번째 iteration에서 위반 0/불법 셀 0/불법 site 0으로 수렴했습니다. 출력 hash는 `4_1_cts.odb` `2aa6698071258bba5e6853b04245f546189457729ac59118b1d43bbb798502d5`, `4_cts.sdc` `c3f1381d0f8c236bd826f1fb0ab2a3b069a29242fdc89a2b9d2f29d4795950e8`입니다.
 
-Independent Liberty-first reopen passed with the expected block, one `clk_i` clock, 565 bumps, four EXCLUSIVE regions, zero placement violations, zero unplaced instances, `have_routes=0`, detailed routes=0, and zero actual dbWire-bearing nets.
+Independent Liberty-first reopen은 예상 block, `clk_i` clock 1개, bump 565개, EXCLUSIVE region 4개, 배치 위반 0, 미배치 instance 0, `have_routes=0`, detailed route 0 및 실제 dbWire-bearing net 0개로 통과했습니다.
 
-Global route, FastRoute/CUGR, detailed route, RC extraction, post-route STA, power/PPA, fill, GDS/OASIS, DRC/LVS/antenna/manufacturing signoff: **NOT_RUN**. The older R3/R6/R7 artifacts remain immutable evidence and were not used as CTS input.
+Global route, FastRoute/CUGR, detailed route, RC extraction, post-route STA, power/PPA, fill, GDS/OASIS, DRC/LVS/antenna/manufacturing signoff는 **NOT_RUN**입니다. 이전 R3/R6/R7 산출물은 변경하지 않는 증거로 남겼으며 CTS 입력으로 사용하지 않았습니다.

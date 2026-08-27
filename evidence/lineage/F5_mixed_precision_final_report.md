@@ -1,6 +1,6 @@
-# Mixed-precision Accuracy and Core-performance Goal Final Report
+# 혼합 정밀도 정확도 및 핵심 성능 목표 최종 보고서
 
-## Executive conclusion
+## 핵심 결론
 
 설계로 normalization의 **수치 정확도**와 **핵심 연산 성능**을 모두 개선할 수 있음을 RTL과 실제 GR00T trace로 확인했다.
 
@@ -47,7 +47,7 @@ BF16 input
 
 최종 전용 회귀는 add, mul, reducer, global, scalar, apply/backpressure가 모두 PASS했다.
 
-## Full-tensor evidence
+## 전체 tensor 증거
 
 | profile | elements | model mismatch | PyTorch bit mismatch | cycles |
 |---|---:|---:|---:|---:|
@@ -59,7 +59,7 @@ BF16 input
 | action_dit_norm_out | 62,976 | 0 | 4 | 6,520 |
 | **합계** | **1,909,248** | **0** | **37** | — |
 
-## Timing evidence
+## timing 증거
 
 Sky130 HD TT 25C 1.8V mapping 결과:
 
@@ -72,7 +72,7 @@ Sky130 HD TT 25C 1.8V mapping 결과:
 
 C11 top의 component-bound period는 apply 27.85ns, 약 35.9MHz다. 이는 component STA이며 full placed-and-routed top timing closure는 아니다.
 
-## Architecture gate
+## 아키텍처 gate
 
 실제 269 calls와 logical traffic을 반영한 결과:
 
@@ -110,4 +110,3 @@ C11 top의 component-bound period는 apply 27.85ns, 약 35.9MHz다. 이는 compo
 - `40_c11_timing_optimization_and_actual_trace_report.md`
 - `41_c11_actual_traffic_architecture_recomparison.md`
 - 본 문서 `42_mixed_precision_goal_final_report.md`
-

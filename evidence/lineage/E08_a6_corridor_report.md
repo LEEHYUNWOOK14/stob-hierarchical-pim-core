@@ -1,8 +1,8 @@
-# Track B A6 final report
+# Track B A6 최종 보고서
 
 ## REGRESSED — PF-4 FAIL
 
-The A6 floorplan-native corridor candidate passed floorplan and placement gates. Its single authorized global-route invocation completed with exit code 0 and produced a valid guide, congestion report, routed ODB, routed SDC, and completion marker. PF-4 failed because congestion remained.
+A6 floorplan-native corridor 후보는 floorplan 및 placement gate를 통과했습니다. 승인된 global-route 호출 1회가 종료 코드 0으로 완료되었고 valid guide, congestion report, routed ODB, routed SDC 및 completion marker를 생성했습니다. 혼잡이 남아 PF-4는 실패했습니다.
 
 1. A5 was not a hypothesis refutation: A5 mutated regions after completed placement, produced 3,615,582 region violations, no placement ODB, and did not route. A4 preaudit measured 5,659 outside instances; these populations are not equivalent.
 2. H-A6 used one variable only: each central-facing quad edge moved inward by 6.9 µm, widening each corridor by 13.8 µm. Netlist, SDC, die/core, bump grid, layer range, and route recipe were preserved.

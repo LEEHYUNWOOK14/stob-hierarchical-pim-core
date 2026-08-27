@@ -1,36 +1,34 @@
-# STOB Hierarchical PIM Core
+# STOB 계층형 PIM 핵심 코드
 
-Submission-oriented package for the hierarchical HBM2-PIM research prototype.
+계층형 HBM2-PIM 연구 프로토타입 제출용 패키지입니다.
 
-## Scope
+## 범위
 
-This repository contains the project's SystemVerilog normalization PCU RTL,
-selected RTL verification benches, independent reference/analysis utilities,
-and selected evidence. It intentionally does not redistribute the Samsung
-PIMSimulator/DRAMSim2-based C++ simulator, simulator binaries, thermal-analysis
-pipeline, external papers, or large physical-design databases.
+이 저장소에는 프로젝트의 SystemVerilog 정규화 PCU RTL, 선별한 RTL 검증
+테스트벤치, 독립 reference/분석 유틸리티와 선별 증거자료가 포함됩니다.
+삼성 PIMSimulator/DRAMSim2 기반 C++ 시뮬레이터, 시뮬레이터 바이너리,
+열 분석 파이프라인, 외부 논문 및 대형 물리 설계 데이터베이스는 배포하지 않습니다.
 
-## Core result
+## 핵심 결과
 
-The primary source is the 16-bank, 8-lane, split-read/write normalization PCU
-under `rtl/core/normalization_pcu/`. The integration sources under
-`rtl/integration/` are the selected quad-local B2 path.
+주요 소스는 `rtl/core/normalization_pcu/` 아래의 16-bank, 8-lane,
+분리 read/write 정규화 PCU입니다. `rtl/integration/` 아래에는 선별한
+quad-local B2 경로가 있습니다.
 
-## Evidence boundary
+## 증거의 범위
 
-The included results are research evidence only. RTL functional PASS does not
-mean timing closure, power signoff, manufacturing signoff, or tape-out readiness.
-The workload is a GR00T-derived normalization boundary study, not full GR00T
-end-to-end inference.
+포함된 결과는 연구 증거로만 사용해야 합니다. RTL 기능 PASS는 timing
+closure, power signoff, 제조 signoff 또는 tape-out 준비 완료를 의미하지
+않습니다. workload는 GR00T에서 파생한 정규화 경계 연구이며, GR00T 전체
+end-to-end 추론이 아닙니다.
 
-## Reproduction
+## 재현
 
-See `reproducibility/commands.md` and `reproducibility/tool_versions.txt`.
-The original server absolute paths have been removed from this package; all
-references must resolve relative to this repository or to an explicitly listed
-external tool installation.
+`reproducibility/commands.md`와 `reproducibility/tool_versions.txt`를
+참조하십시오. 원본 서버 절대 경로는 제거했으며, 모든 경로는 이 저장소
+기준 상대 경로 또는 명시된 외부 도구 설치 경로로 해석되어야 합니다.
 
-## License and third-party code
+## 라이선스 및 제3자 코드
 
-See `THIRD_PARTY_NOTICES.md`. The absence of the restricted simulator source
-from this repository does not grant permission to redistribute it.
+`THIRD_PARTY_NOTICES.md`를 참조하십시오. 제한된 시뮬레이터 소스가 이
+저장소에 없다는 사실은 해당 소스의 재배포 허가를 의미하지 않습니다.

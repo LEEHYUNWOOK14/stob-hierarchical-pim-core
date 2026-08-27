@@ -1,4 +1,4 @@
-# GR00T 전체 Normalization Workload Inventory 보고서
+# GR00T 전체 정규화 workload inventory 보고서
 
 작성일: 2026-08-12  
 대상 모델: `nvidia/GR00T-N1.7-3B`  
@@ -23,7 +23,7 @@ Isaac-GR00T revision: `b9955401d50c92a29258732e3ad6ccd579f1bdc0`
 
 이 확인이 필요한 이유는 arithmetic RTL을 다시 검증하기 위해서가 아니라, **lane 수와 hardware cost 결론이 action-head workload에 과도하게 편향되지 않았는지 확인하기 위해서**다.
 
-## 2. “전체 normalization workload inventory 확인”의 구체 작업
+## 2. “전체 정규화 workload inventory 확인”의 구체 작업
 
 이번 inventory는 다음 7단계로 수행했다.
 
@@ -82,7 +82,7 @@ Isaac-GR00T revision: `b9955401d50c92a29258732e3ad6ccd579f1bdc0`
 - vision 제외 runtime/representative weighted elements: **54,220,800**
 - 아직 runtime row 수가 없는 profile: **vision norm1, vision norm2 두 개**
 
-### Static/runtime 차이 발견
+### 정적 정보와 runtime 차이 발견
 
 기존 static manifest는 `action_dit_norm3`를 `elementwise_affine=true`로 분류했지만 pretrained runtime module trace는 `false`였다. 새 inventory는 runtime 값을 우선했다.
 
@@ -92,7 +92,7 @@ Isaac-GR00T revision: `b9955401d50c92a29258732e3ad6ccd579f1bdc0`
 
 Action-head cycle은 실제 PCU top RTL 측정값을 사용했다. Backbone은 bank/replay/write-back event model의 32→64-row steady-state를 긴 row에 투영했다. 따라서 아래 결과는 measured+modeled hybrid이며 full-model runtime 측정값이 아니다.
 
-### Cycle 감소율
+### cycle 감소율
 
 | Workload 범위 | 4→8 lane 감소 | 8→16 lane 감소 | Balanced knee |
 |---|---:|---:|---:|
@@ -157,4 +157,3 @@ Hardware relative cost 변화:
 - `reports/groot_normalization/results/full_normalization_inventory/lane_sensitivity.csv`
 - `reports/groot_normalization/results/full_normalization_inventory/source_evidence.csv`
 - `reports/groot_normalization/results/full_normalization_inventory/evidence_discrepancies.csv`
-
